@@ -29,14 +29,14 @@ async function getRepos() {
       {
         id: 2,
         name: 'HabitFlow',
-        description: 'HabitFlow is a lightweight Chrome extension that helps you build consistency and stay motivated. Track habits, visualize your progress, and get AI-powered insights that adapt to your routines. With simple streaks, reminders, and smart suggestions, HabitFlow makes it easier to stay on track every day.',
+        description: 'HabitFlow is a Chrome extension that helps you build consistency and stay motivated. Track habits, visualize your progress, and get AI-powered insights that adapt to your routines. With simple streaks, reminders, and smart suggestions, HabitFlow makes it easier to stay on track every day.',
         language: 'JavaScript',
         html_url: `https://github.com/${userInfo.githubUsername}`,
       },
       {
         id: 3,
         name: 'DesGen',
-        description: 'DesGen is a Chrome extension that transforms images or artwork into mathematical sketches in Desmos, allowing users to explore the intersection of math and visual creativity. Inspired by mathematicians who create intricate Desmos art, its goal is to make this niche more accessible to beginners and aspiring math-loving, artistic students. Users can upload images, adjust settings like resolution and curve type, and export equations directly into Desmos. DesGen encourages experimentation with concepts such as parametric curves, transformations, and fractals, providing an entry point for learning, inspiration, and creative expression without replacing the skill and artistry of experienced Desmos creators.',
+        description: 'DesGen is a Chrome extension that transforms images or artwork into mathematical sketches in Desmos, allowing users to explore the intersection of math and visual creativity. Inspired by mathematicians who create intricate Desmos art, its goal is to make this niche more accessible to beginners and aspiring math-loving, artistic students. Users can upload images, and export equations directly into Desmos. DesGen encourages experimentation by providing an entry point for learning, inspiration, and creative expression without replacing the skill and artistry of experienced Desmos creators.',
         language: 'JavaScript',
         html_url: `https://github.com/${userInfo.githubUsername}`,
       },
