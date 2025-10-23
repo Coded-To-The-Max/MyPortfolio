@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "project-1",
+      "description": "A modern logo of a blue graduation cap",
+      "imageUrl": "https://i.imgur.com/dla3xO6.png",
+      "imageHint": "blue graduation cap"
+    },
+    {
+      "id": "project-2",
+      "description": "A modern logo of a sun, moon, and calendar",
+      "imageUrl": "https://i.imgur.com/LtXX9gw.png",
+      "imageHint": "sun moon calendar"
+    },
+    {
+      "id": "project-3",
+      "description": "An image of mathematical art",
+      "imageUrl": "https://i.imgur.com/QfXwJPN.png",
+      "imageHint": "math art"
+    },
+    {
+      "id": "project-4",
+      "description": "Network connection nodes",
+      "imageUrl": "https://images.unsplash.com/photo-1752155530542-2f6649205093?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZXR3b3JrJTIwbm9kZXN8ZW58MHx8fHwxNzU5NDA4ODU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network nodes"
+    },
+    {
+      "id": "project-5",
+      "description": "Flowing code on a screen",
+      "imageUrl": "https://images.unsplash.com/photo-1615494937408-7f4e41bf45d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc1OTM0NTU5Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "project-6",
+      "description": "Minimalist technology setup",
+      "imageUrl": "https://images.unsplash.com/photo-1660832459346-d069f58410c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NTk0MjM2MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "minimalist technology"
+    }
+  ]
+}
