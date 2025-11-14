@@ -38,7 +38,7 @@ export const experiences = [
     role: 'Founder',
     period: 'Fall 2025',
     description:
-      'CollegeGuide is a dynamic web application designed to assist high school students in their college application journey. Through an intuitive, AI-powered chat interface, students can explore potential colleges, understand admission requirements, and receive personalized guidance. Built as both a functional prototype and a learning project, CollegeGuide showcases full-stack development expertise, authentication, and AI integration.',
+      'CollegeGuide is a dynamic web application designed to assist high school students in their college application journey. Coded in TypeScript and JavaScript',
     icon: Users,
   },
   {
@@ -46,7 +46,7 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'HabitFlow is a lightweight Chrome extension that helps you build consistency and stay motivated. Track habits, visualize your progress, and get AI-powered insights that adapt to your routines. With simple streaks, reminders, and smart suggestions, HabitFlow makes it easier to stay on track every day.',
+      'HabitFlow is a Chrome extension that helps you build consistency and stay motivated. Coded in JavaScript.',
     icon: MousePointerSquareDashed,
   },
   {
@@ -54,7 +54,7 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. The tool is designed to make mathematical art more accessible and experimental, bridging the gap between artistic creativity and mathematical concepts.',
+      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. Coded in JavaScript. Mostly experimental.',
     icon: DraftingCompass,
   },
 ];
