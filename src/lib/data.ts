@@ -60,4 +60,4 @@ export const experiences = [
 ];
 
 export const futureVision =
-  "My mission is to create software that’s simple, useful, and creative. I want to make information easy to understand and more accessible, especially for students. My goal is to create tangible projects that make a difference in everyday life.";
+  "My mission is to create software that’s simple, useful, and creative. I want to make information easy to understand and more accessible, especially for students. I also want to create projects that can make a difference in everyday life.";
