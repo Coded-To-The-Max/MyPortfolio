@@ -38,7 +38,7 @@ export const experiences = [
     role: 'Founder',
     period: 'Fall 2025',
     description:
-      'CollegeGuide is a dynamic web application designed to assist high school students in their college application journey. Coded in TypeScript and JavaScript',
+      'CollegeGuide is a dynamic web application designed to assist high school students in their college application journey. Completely self-developed from scratch. Coded in TypeScript and JavaScript',
     icon: Users,
   },
   {
@@ -46,7 +46,7 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'HabitFlow is a Chrome extension that helps you build consistency and stay motivated. Coded in JavaScript.',
+      'HabitFlow is a Chrome extension that helps you build consistency and stay motivated. Completely self-developed from scratch. Coded in JavaScript.',
     icon: MousePointerSquareDashed,
   },
   {
@@ -54,7 +54,7 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. Coded in JavaScript. Mostly experimental.',
+      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. Completely self-developed from scratch. Coded in JavaScript. Mostly experimental.',
     icon: DraftingCompass,
   },
 ];
