@@ -54,10 +54,10 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. The tool is designed to make mathematical art more accessible, allowing users to experiment with parametric curves and transformations, thereby bridging the gap between artistic creativity and mathematical concepts.',
+      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. The tool is designed to make mathematical art more accessible and experimental, bridging the gap between artistic creativity and mathematical concepts.',
     icon: DraftingCompass,
   },
 ];
 
 export const futureVision =
-  "My mission is to create software that’s simple, useful, and actually helps people. A lot of my focus is on making information easier to understand and more accessible—especially for students. My goal is to create applications that make a real difference in everyday life.";
+  "My mission is to create software that’s simple, useful, and creative. I want to make information easy to understand and more accessible, especially for students. My goal is to create tangible projects that make a difference in everyday life.";
