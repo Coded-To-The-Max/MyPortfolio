@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'My Portfolio | Max Zhou',
-  description: "Max Zhou's personal portfolio.",
+  description: "Max Zhou's Personal Portfolio.",
 };
 
 export default function RootLayout({
