@@ -22,9 +22,9 @@ async function getRepos() {
       {
         id: 1,
         name: 'CollegeGuide',
-        description: 'CollegeGuide is a dynamic web application designed to simplify high school students in their college application journey. Through tools such as an AI-powered chat interface, a way to track potential colleges, understand admissions, and receive personalized guidance. Built as both a functional prototype and a learning project, CollegeGuide AI showcases full-stack development, authentication, and AI integration. *View at collegeguide.tech*',
+        description: 'CollegeGuide is a dynamic web application designed to simplify high school students in their college application journey. Through tools such as an AI-powered chat interface, a way to track potential colleges, understand admissions, and receive personalized guidance. Built as both a functional prototype and a learning project, CollegeGuide AI showcases full-stack development, authentication, and AI integration.',
         language: 'TypeScript',
-        html_url: `https://github.com/Coded-To-The-Max/CollegeGuide`,
+        html_url: `collegeguide.tech`,
       },
       {
         id: 2,
