@@ -1,45 +1,21 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Code, Star, GitFork } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import type { GithubRepo } from '@/lib/types';
+import Link from 'next/link';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
+import type { GithubRepo } from '@/lib/types';
 
-interface RepoCardProps {
-  repo: GithubRepo;
-  image: ImagePlaceholder;
-}
+interface RepoCardProps { repo: GithubRepo; image: ImagePlaceholder; index: number; }
 
-export function RepoCard({ repo, image }: RepoCardProps) {
+export function RepoCard({ repo, image, index }: RepoCardProps) {
   return (
-    <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <CardHeader>
-        <div className="aspect-video relative mb-4">
-            <Image
-                src={image.imageUrl}
-                alt={repo.name}
-                fill
-                className="rounded-t-lg object-cover"
-                data-ai-hint={image.imageHint}
-            />
-        </div>
-        <CardTitle className="font-headline text-xl leading-tight">
-          <Link href={repo.html_url} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-            {repo.name}
-          </Link>
-        </CardTitle>
-        <CardDescription className="flex-grow pt-2">{repo.description || 'No description available.'}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow"></CardContent>
-      <CardFooter className="flex justify-between items-center text-sm text-muted-foreground">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1">
-            <Code className="h-4 w-4" />
-            <span>{repo.language || 'N/A'}</span>
-          </div>
-        </div>
-      </CardFooter>
-    </Card>
+    <article className="project-item">
+      <Link className="project-media" href={repo.html_url} target="_blank" rel="noreferrer">
+        <Image src={image.imageUrl} alt={`${repo.name} project preview`} fill sizes="(min-width: 640px) 58vw, 100vw" data-ai-hint={image.imageHint} />
+      </Link>
+      <div className="project-copy">
+        <div className="project-meta"><span className="project-index">0{index + 1}</span><span>{repo.language || 'Software project'}</span></div>
+        <h3 className="project-name"><Link href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</Link></h3>
+        <p className="project-description">{repo.description || 'Project details are available in the repository.'}</p>
+      </div>
+    </article>
   );
 }

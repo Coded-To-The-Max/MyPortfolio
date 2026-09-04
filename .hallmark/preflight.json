@@ -1,0 +1,8 @@
+{
+  "date": "2026-09-04",
+  "framework": "Next.js 15.3.3 App Router with Tailwind CSS 3.4.1",
+  "fontStack": "Inter and Space Grotesk, expanded with JetBrains Mono",
+  "palette": "Existing teal and cream replaced by Hallmark Cobalt OKLCH tokens",
+  "motion": "Universal reveal and typewriter effects removed; motion is limited to project imagery and direct controls",
+  "spacing": "Tailwind default scale, aligned to Hallmark 4pt tokens"
+}

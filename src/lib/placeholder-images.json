@@ -3,19 +3,19 @@
     {
       "id": "project-1",
       "description": "A modern logo of a blue graduation cap",
-      "imageUrl": "https://i.imgur.com/dla3xO6.png",
+      "imageUrl": "/images/collegeguide-upscaled.png",
       "imageHint": "blue graduation cap"
     },
     {
       "id": "project-2",
       "description": "A modern logo of a sun, moon, and calendar",
-      "imageUrl": "https://i.imgur.com/LtXX9gw.png",
+      "imageUrl": "/images/habitflow-upscaled.png",
       "imageHint": "sun moon calendar"
     },
     {
       "id": "project-3",
       "description": "An image of mathematical art",
-      "imageUrl": "https://i.imgur.com/QfXwJPN.png",
+      "imageUrl": "/images/desgen-upscaled.png",
       "imageHint": "math art"
     },
     {

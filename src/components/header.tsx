@@ -1,11 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Code } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { cn } from '@/lib/utils';
 import { userInfo } from '@/lib/data';
 
 const navLinks = [
@@ -16,80 +12,78 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [query, setQuery] = useState('');
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const results = useMemo(() => navLinks.filter((item) => item.label.toLowerCase().includes(query.toLowerCase())), [query]);
+
+  const closeCommand = () => dialogRef.current?.close();
+  const openCommand = () => {
+    setQuery('');
+    setActiveIndex(0);
+    dialogRef.current?.showModal();
+    window.setTimeout(() => inputRef.current?.focus(), 0);
+  };
+  const visit = (href: string) => {
+    closeCommand();
+    window.location.hash = href.slice(1);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+    const handleShortcut = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        dialogRef.current?.open ? closeCommand() : openCommand();
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleShortcut);
+    return () => window.removeEventListener('keydown', handleShortcut);
   }, []);
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled
-          ? 'border-b border-border/40 bg-background/80 backdrop-blur-sm'
-          : 'bg-transparent'
-      )}
-    >
-      <div className="section-container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-headline text-lg font-semibold">
-          <Code className="h-6 w-6 text-primary" />
-          <span>{userInfo.name}</span>
+    <header className="site-header">
+      <div className="section-container header-inner">
+        <Link href="#hero" className="brand" aria-label={`${userInfo.name}, home`}>
+          <span className="brand-mark" aria-hidden="true">MZ</span><span>{userInfo.name}</span>
         </Link>
-
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {navLinks.map((link) => <Link key={link.href} href={link.href} className="nav-link">{link.label}</Link>)}
         </nav>
-
-        <div className="md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex h-full flex-col">
-                <div className="flex items-center justify-between border-b pb-4">
-                    <Link href="/" className="flex items-center gap-2 font-headline text-lg font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Code className="h-6 w-6 text-primary" />
-                        <span>{userInfo.name}</span>
-                    </Link>
-                    <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                        <X className="h-6 w-6" />
-                    </Button>
-                </div>
-                <nav className="mt-8 flex flex-col gap-6">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-lg font-medium text-foreground transition-colors hover:text-primary"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+        <button className="command-trigger" type="button" onClick={openCommand}><span>Jump to</span><kbd>⌘K</kbd></button>
+        <button className="menu-trigger" type="button" aria-expanded={isMobileMenuOpen} aria-controls="mobile-navigation" onClick={() => setIsMobileMenuOpen((current) => !current)}>
+          {isMobileMenuOpen ? 'Close' : 'Menu'}
+        </button>
       </div>
+      {isMobileMenuOpen && (
+        <div className="mobile-menu" id="mobile-navigation">
+          <nav className="section-container" aria-label="Mobile navigation">
+            {navLinks.map((link) => <Link key={link.href} href={link.href} className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>{link.label}</Link>)}
+          </nav>
+        </div>
+      )}
+      <dialog ref={dialogRef} className="command-dialog" aria-label="Jump to a section" onClick={(event) => { if (event.target === dialogRef.current) closeCommand(); }}>
+        <div className="command-form" onKeyDown={(event) => {
+          if (event.key === 'ArrowDown') { event.preventDefault(); setActiveIndex((current) => (current + 1) % Math.max(results.length, 1)); }
+          if (event.key === 'ArrowUp') { event.preventDefault(); setActiveIndex((current) => (current - 1 + Math.max(results.length, 1)) % Math.max(results.length, 1)); }
+          if (event.key === 'Enter' && results[activeIndex]) { event.preventDefault(); visit(results[activeIndex].href); }
+        }}>
+          <div className="command-field">
+            <span className="mono-label">Go</span>
+            <input ref={inputRef} value={query} onChange={(event) => { setQuery(event.target.value); setActiveIndex(0); }} placeholder="Type a section name" aria-label="Filter sections" />
+            <button className="command-close" type="button" onClick={closeCommand} aria-label="Close command menu">Esc</button>
+          </div>
+          <div className="command-results" role="listbox" aria-label="Sections">
+            {results.map((item, index) => (
+              <a key={item.href} href={item.href} className={`command-item${index === activeIndex ? ' is-active' : ''}`} role="option" aria-selected={index === activeIndex} onMouseEnter={() => setActiveIndex(index)} onClick={closeCommand}>
+                <span className="command-index">0{index + 1}</span><span>{item.label}</span>
+              </a>
+            ))}
+            {results.length === 0 && <p className="command-item">No matching section</p>}
+          </div>
+        </div>
+      </dialog>
     </header>
   );
 }

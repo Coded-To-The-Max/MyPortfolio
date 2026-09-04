@@ -8,9 +8,9 @@ import { Mission } from '@/components/sections/mission';
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="page-shell">
       <Header />
-      <main className="flex-1">
+      <main>
         <Hero />
         <Projects />
         <Skills />

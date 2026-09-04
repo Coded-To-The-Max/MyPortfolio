@@ -2,8 +2,6 @@ import { RepoCard } from '@/components/repo-card';
 import { userInfo } from '@/lib/data';
 import type { GithubRepo } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ScrollReveal } from '../scroll-reveal';
-import { Button } from '../ui/button';
 import Link from 'next/link';
 
 async function getRepos() {
@@ -42,12 +40,10 @@ async function getRepos() {
       },
     ];
 
-    // Override fetched repos with custom data
     return repos.map((repo, i) => (customProjects[i] ? { ...repo, ...customProjects[i] } : repo)).slice(0, 3);
 
   } catch (error) {
     console.error("Failed to fetch repos:", error);
-    // Return custom projects as a fallback
     return [
       {
         id: 1,
@@ -87,34 +83,26 @@ export async function Projects() {
   const repos = await getRepos();
 
   return (
-    <section id="projects" className="section-padding bg-background">
+    <section id="projects" className="section-block projects">
       <div className="section-container">
-        <ScrollReveal>
-          <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">Latest Projects</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-            Here are some of my recent projects.
-          </p>
-        </ScrollReveal>
+        <div className="section-head">
+          <h2 className="section-title">Selected builds</h2>
+          <p className="section-summary">Three working products spanning college guidance, habit tracking, and mathematical image translation.</p>
+        </div>
         
         {repos.length > 0 ? (
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="project-list">
             {repos.map((repo, index) => (
-              <ScrollReveal key={repo.id} delay={index * 100}>
-                <RepoCard repo={repo} image={PlaceHolderImages[index % PlaceHolderImages.length]} />
-              </ScrollReveal>
+              <RepoCard key={repo.id} repo={repo} image={PlaceHolderImages[index % PlaceHolderImages.length]} index={index} />
             ))}
           </div>
         ) : (
-          <p className="mt-12 text-center text-muted-foreground">Could not load projects.</p>
+          <p className="section-summary">Projects are temporarily unavailable. The full repository list is still accessible below.</p>
         )}
 
-        <ScrollReveal className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
-                <Link href={`https://github.com/${userInfo.githubUsername}?tab=repositories`} target="_blank" rel="noopener noreferrer">
-                    View All Repositories
-                </Link>
-            </Button>
-        </ScrollReveal>
+        <div className="projects-cta">
+          <Link className="secondary-link" href={`https://github.com/${userInfo.githubUsername}?tab=repositories`} target="_blank" rel="noreferrer">Browse all repositories</Link>
+        </div>
       </div>
     </section>
   );
