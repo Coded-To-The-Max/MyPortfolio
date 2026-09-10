@@ -132,8 +132,7 @@
   .hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); }
   .section-head { grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr); align-items: end; }
   .project-item { grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr); align-items: center; }
-  .project-item:nth-child(even) { grid-template-columns: minmax(16rem, 0.65fr) minmax(0, 1.35fr); }
-  .project-item:nth-child(even) .project-media { order: 2; }
+  .project-item.project-item-text { grid-template-columns: minmax(0, 1fr); }
   .experience-row { grid-template-columns: 8rem minmax(11rem, 0.55fr) minmax(0, 1fr); align-items: start; }
   .mission-grid { grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); align-items: end; }
   .footer-line { flex-direction: row; align-items: center; justify-content: space-between; }

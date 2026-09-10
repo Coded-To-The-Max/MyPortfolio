@@ -1,3 +1,7 @@
+export type PortfolioProject = Pick<GithubRepo, 'id' | 'name' | 'description' | 'language'> & {
+  html_url?: string;
+};
+
 export interface GithubRepo {
   id: number;
   name: string;
