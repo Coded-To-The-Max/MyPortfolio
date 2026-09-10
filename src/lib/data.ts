@@ -30,7 +30,7 @@ export const experiences = [
     role: 'Invention Lab Intern',
     period: 'Summer 2024',
     description:
-      'Learned and developed skills in C++ and Python. Created and prototyped physical products such as working with CPXs, 3D printing, vinyl cutting, and laser engraving. Briefly worked in some entry-level graphic design.',
+      'Prototyped hardware projects using C++, Python, and Circuit Playground Express microcontrollers. Applied 3D printing, vinyl cutting, and laser engraving to fabricate and refine physical designs.',
     icon: Briefcase,
   },
   {
@@ -38,7 +38,7 @@ export const experiences = [
     role: 'Founder',
     period: 'Fall 2025',
     description:
-      'CollegeGuide is a dynamic web application designed to assist high school students in their college application journey. Completely self-developed from scratch. Coded in TypeScript and JavaScript',
+      'Founded and independently built a full-stack college guidance application using TypeScript and JavaScript. Integrated authentication, AI-powered advising, and college tracking tools to support the application process.',
     icon: Users,
   },
   {
@@ -46,7 +46,7 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'HabitFlow is a Chrome extension that helps you build consistency and stay motivated. Completely self-developed from scratch. Coded in JavaScript.',
+      'Independently developed a JavaScript Chrome extension for habit tracking, progress visualization, and reminders. Integrated AI-powered insights to help users adapt routines and build consistency.',
     icon: MousePointerSquareDashed,
   },
   {
@@ -54,10 +54,18 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'Developed a Chrome extension that translates images into mathematical equations for visualization in Desmos. Completely self-developed from scratch. Coded in JavaScript. Mostly experimental.',
+      'Independently developed an experimental JavaScript Chrome extension that converts images into mathematical equations for Desmos. Implemented image upload, adjustable settings, and equation export for mathematical visualization.',
     icon: DraftingCompass,
+  },
+  {
+    company: 'Stock Screener',
+    role: 'Developer',
+    period: 'Fall 2026',
+    description:
+      'Developed a Python equity screener integrating Yahoo Finance and SEC EDGAR APIs. Implemented asynchronous processing, rate limiting, retries, and caching for full-universe screening. Built financial risk analytics, automated reporting, and forward performance evaluation, validated through 87 automated tests.',
+    icon: Code,
   },
 ];
 
 export const futureVision =
-  "My mission is to create software that’s simple, useful, and creative. I want to make information easy to understand and more accessible, especially for students. I also want to create projects that can make a difference in everyday life.";
+  "My mission is to build useful, creative software that makes technology more accessible. I want the projects I create to solve real problems and make a meaningful difference in people's everyday lives.";
