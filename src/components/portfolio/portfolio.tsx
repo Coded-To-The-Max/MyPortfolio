@@ -119,7 +119,7 @@ export function Portfolio() {
             <h1 className="p-name">Max Zhou</h1>
             <p className="p-role p-blur-in">A <span key={role}>{roles[role]}</span> with a curious mind.</p>
             <p className="p-hero-description p-blur-in">Building useful software at the intersection of everyday problems and creative possibilities.</p>
-            <div className="p-actions p-blur-in"><a className="p-button p-button-solid" href="#projects">See works <span aria-hidden="true">↗</span></a><a className="p-button" href={GITHUB} target="_blank" rel="noreferrer">Reach out… <span aria-hidden="true">↗</span></a></div>
+            <div className="p-actions p-blur-in"><a className="p-button p-button-solid" href="#projects">See works <span aria-hidden="true">↗</span></a><a className="p-button" href="mailto:maxliyang.zhou@gmail.com">Reach out… <span aria-hidden="true">↗</span></a></div>
           </div>
           <a href="#projects" className="p-scroll"><span>Scroll to explore</span><i /></a>
           <span className="p-hero-note">Independent ideas.<br />Thoughtfully built.</span>
