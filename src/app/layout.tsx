@@ -6,6 +6,10 @@ import './portfolio.css';
 export const metadata: Metadata = {
   title: 'Max Zhou | Developer Portfolio',
   description: 'Projects and engineering work by developer Max Zhou.',
+  icons: {
+    icon: [{ url: '/favicon-m-v2.svg', type: 'image/svg+xml' }],
+    shortcut: '/favicon.ico?v=2',
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +22,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
           rel="stylesheet"
