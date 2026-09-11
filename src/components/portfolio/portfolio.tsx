@@ -129,11 +129,11 @@ export function Portfolio() {
           <div className="p-container">
             <motion.div className="p-section-heading" {...reveal}><div><p className="p-eyebrow">Selected work</p><h2>Featured <em>projects</em></h2><p>A few ideas I’ve taken from curiosity to code.</p></div><a className="p-button p-small" href={`${GITHUB}?tab=repositories`} target="_blank" rel="noreferrer">All repositories <span aria-hidden="true">↗</span></a></motion.div>
             <div className="p-work-grid">{projects.map((project, index) => <motion.article className={`p-work-card p-work-${index}`} key={project.name} {...reveal}>
-              <a href={project.href} target={project.href.startsWith('#') ? undefined : '_blank'} rel={project.href.startsWith('#') ? undefined : 'noreferrer'} onClick={() => { if (project.href.startsWith('#')) document.getElementById('screener-details')?.setAttribute('open', ''); }} className="p-work-visual" aria-label={project.name === 'Stock Screener' ? 'Read about Stock Screener' : `View ${project.name}`}>
+              <a href={project.href} target={project.href.startsWith('#') ? undefined : '_blank'} rel={project.href.startsWith('#') ? undefined : 'noreferrer'} onClick={() => { if (project.href.startsWith('#')) document.getElementById('screener-details')?.setAttribute('open', ''); }} className="p-work-visual" aria-label={`View ${project.name}`}>
                 <Image src={project.image} alt={`${project.name} project symbol`} fill quality={90} sizes="(max-width: 700px) 95vw, 55vw" />
                 <span className="p-work-hover"><span>View <em>{project.name}</em> ↗</span></span>
               </a>
-              <div className="p-work-copy"><div><p>{project.category}</p><h3>{project.name}</h3></div><span className="p-work-arrow" aria-hidden="true">↗</span><p className="p-work-description">{project.description}</p><span className="p-work-stack">{project.stack}</span></div>
+              <div className="p-work-copy"><div><p>{project.category}</p><h3><a href={project.href} target="_blank" rel="noreferrer">{project.name}</a></h3></div><span className="p-work-arrow" aria-hidden="true">↗</span><p className="p-work-description">{project.description}</p><span className="p-work-stack">{project.stack}</span></div>
             </motion.article>)}</div>
           </div>
         </section>
