@@ -20,3 +20,5 @@ GSAP handles the entrance, gallery parallax, and marquee. Motion handles section
 Contact links point to the GitHub profile; the experience section replaces a downloadable resume. No fictional journal articles, clients, or experience statistics are displayed.
 
 Recent thoughts are four concise personal research notes in `src/components/portfolio/journal-data.ts`, with primary-source links and reading times calculated from the text. They expand in place with keyboard-accessible native disclosure controls.
+
+Their generated planet thumbnails follow solar-system order: Mercury, Venus, Earth, and Mars. Pointer hover and keyboard focus add a slight rotation and a color-matched halo. Reduced-motion preferences and the pause control suppress rotation.

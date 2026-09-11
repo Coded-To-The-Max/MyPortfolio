@@ -214,7 +214,7 @@
 .p-journal-entry summary { display: flex; align-items: center; gap: 24px; padding: 16px 28px 16px 16px; list-style: none; cursor: pointer; border-radius: 40px; }
 .p-journal-entry summary::-webkit-details-marker { display: none; }
 .p-journal-entry summary:hover { background: #ffffff04; }
-.p-journal-cover { display: grid; place-items: center; width: 100px; height: 88px; flex-shrink: 0; font: italic 24px var(--font-display); color: #b9cadd; background: #181c20; border: 1px solid #ffffff0a; border-radius: 24px; }
+.p-journal-cover { display: grid; place-items: center; width: 100px; height: 88px; flex-shrink: 0; position: relative; isolation: isolate; background: #141719; border: 1px solid #ffffff0a; border-radius: 24px; }
 .p-journal-label { display: grid; gap: 7px; min-width: 0; }
 .p-journal-category { color: #a0afbf; font-size: 10px; }
 .p-journal-label strong { font-size: 17px; line-height: 1.4; font-weight: 400; letter-spacing: -.025em; }
@@ -244,4 +244,23 @@
   .p-journal-article { padding: 20px; margin: 4px 0 20px; font-size: 14px; }
   .portfolio .p-journal-article h3 { font-size: 18px; }
   .p-journal-sources a { font-size: 11px; }
+}
+
+/* Individual planet rotations and matching halos respond to pointer or keyboard focus. */
+.p-journal-cover::before { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 42%; aspect-ratio: 1; border-radius: 50%; background: var(--planet-color); box-shadow: 0 0 16px 6px var(--planet-color); filter: blur(8px); opacity: 0; transition: opacity 450ms var(--ease-out); pointer-events: none; }
+.p-journal-planet { position: relative; display: block; width: 88px; height: 88px; }
+.p-journal-planet img { object-fit: contain; object-position: center; transform-origin: center; transition: transform 700ms var(--ease-out); }
+.p-journal-entry summary:focus-visible .p-journal-planet img { transform: rotate(var(--planet-turn)) scale(1.06); }
+.p-journal-entry summary:focus-visible .p-journal-cover::before { opacity: .65; }
+@media (hover: hover) and (pointer: fine) {
+  .p-journal-entry summary:hover .p-journal-planet img { transform: rotate(var(--planet-turn)) scale(1.06); }
+  .p-journal-entry summary:hover .p-journal-cover::before { opacity: .65; }
+}
+@media (max-width: 700px) {
+  .p-journal-planet { width: 52px; height: 52px; }
+}
+.portfolio.p-motion-off .p-journal-planet img { transform: none; transition: none; }
+.portfolio.p-motion-off .p-journal-cover::before { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .p-journal-entry summary .p-journal-planet img { transform: none !important; }
 }

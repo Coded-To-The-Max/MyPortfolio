@@ -4,14 +4,14 @@ export type JournalSection = {
   sources?: { title: string; url: string }[];
 };
 export type JournalEntry = {
-  id: string; title: string; category: string; cover: string; excerpt: string;
+  id: string; title: string; category: string; planet: { name: string; image: string; color: string; turn: string }; excerpt: string;
   sections: JournalSection[];
 };
 
 export const journalEntries: JournalEntry[] = [
   {
     id: 'model-collapse', title: 'Model collapse and the recursive internet',
-    category: 'Training data', cover: 'Recursion',
+    category: 'Training data', planet: { name: 'Mercury', image: '/images/planet-mercury.png', color: '#B6BDC6', turn: '-12deg' },
     excerpt: 'What happens when AI increasingly learns from its own reflection?',
     sections: [
       {
@@ -34,7 +34,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     id: 'ai-data-frontier', title: 'Beyond the data frontier',
-    category: 'The future of AI', cover: 'Frontier',
+    category: 'The future of AI', planet: { name: 'Venus', image: '/images/planet-venus.png', color: '#C9AD7F', turn: '14deg' },
     excerpt: 'Will the next breakthrough come from more data, or better ways of creating evidence?',
     sections: [
       {
@@ -57,7 +57,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     id: 'ai-scientific-discovery', title: 'AI as an instrument of discovery',
-    category: 'Science and capability', cover: 'Discovery',
+    category: 'Science and capability', planet: { name: 'Earth', image: '/images/planet-earth.png', color: '#79AACD', turn: '-14deg' },
     excerpt: 'The breakthroughs are exciting. Understanding what they actually establish is even more interesting.',
     sections: [
       {
@@ -88,7 +88,7 @@ export const journalEntries: JournalEntry[] = [
   },
   {
     id: 'ai-quantum-computing', title: 'Where AI meets quantum computing',
-    category: 'Emerging computation', cover: 'Quantum',
+    category: 'Emerging computation', planet: { name: 'Mars', image: '/images/planet-mars.png', color: '#C98670', turn: '12deg' },
     excerpt: 'A two-way relationship with remarkable potential and some very practical constraints.',
     sections: [
       {
