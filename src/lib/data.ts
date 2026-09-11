@@ -36,15 +36,15 @@ export const experiences = [
     role: 'Invention Lab Intern',
     period: 'Summer 2024',
     description:
-      'Prototyped hardware projects using C++, Python, and Circuit Playground Express microcontrollers. Applied 3D printing, vinyl cutting, and laser engraving to fabricate and refine physical designs.',
+      'Engineered and debugged software for 3+ Arduino-based hardware projects using Python and C++, developing practical experience in embedded systems and hardware–software integration. Collaborated on hands-on design and prototyping work using Circuit Playground Express, vinyl cutters, laser engravers, 3D printers, and Procreate. Applied critical thinking and iterative problem-solving to connect digital designs with physical prototypes.',
     icon: Briefcase,
   },
   {
-    company: 'CollegeGuide Startup',
-    role: 'Founder',
-    period: 'Fall 2025',
+    company: 'CollegeGuide',
+    role: 'Founder & Developer',
+    period: 'Sep 2025 – Present',
     description:
-      'Founded and independently built a full-stack college guidance application using TypeScript and JavaScript. Integrated authentication, AI-powered advising, and college tracking tools to support the application process.',
+      'Founded and engineered a nonprofit AI-powered college guidance platform in TypeScript and JavaScript. Led frontend-to-backend product design and development, managed stored databases, and implemented authentication, AI advising, and college tracking. Gathered feedback from 5+ beta testers among friends and family to inform early product refinement.',
     icon: Users,
   },
   {
@@ -52,23 +52,23 @@ export const experiences = [
     role: 'Developer',
     period: 'Fall 2025',
     description:
-      'Independently developed a JavaScript Chrome extension for habit tracking, progress visualization, and reminders. Integrated AI-powered insights to help users adapt routines and build consistency.',
+      'Designed and independently developed a JavaScript Chrome extension for habit tracking, progress visualization, streaks, and reminders. Integrated AI-powered insights to help users reflect on their routines and adapt their goals, with an emphasis on clear interaction design and approachable day-to-day use.',
     icon: MousePointerSquareDashed,
   },
   {
     company: 'DesGen',
     role: 'Developer',
-    period: 'Fall 2025',
+    period: 'Oct 2025 – Present',
     description:
-      'Independently developed an experimental JavaScript Chrome extension that converts images into mathematical equations for Desmos. Implemented image upload, adjustable settings, and equation export for mathematical visualization.',
+      'Built a JavaScript browser extension that translates uploaded images into mathematical equations and automatically enters them into Desmos. Developed the edge-detection, image-processing, and equation-generation framework, with adjustable controls for exploring graph-based artwork and mathematical visualization.',
     icon: DraftingCompass,
   },
   {
     company: 'Stock Screener',
     role: 'Developer',
-    period: 'Fall 2026',
+    period: 'Sep 2026 – Present',
     description:
-      'Developed a Python equity screener integrating Yahoo Finance and SEC EDGAR APIs. Implemented asynchronous processing, rate limiting, retries, and caching for full-universe screening. Built financial risk analytics, automated reporting, and forward performance evaluation, validated through 87 automated tests.',
+      'Developed a sub-$10 equity research tool in Python, integrating Yahoo Finance and SEC EDGAR APIs to evaluate financial statements, insider transactions, and liquidity metrics. Implemented asynchronous processing, rate limiting, retry logic, and caching for reliable full-universe screening. Built financial risk analytics, automated reporting, and forward performance evaluation, with implementation validated through 87 automated tests.',
     icon: Code,
   },
 ];

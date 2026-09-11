@@ -13,7 +13,7 @@ npm run build
 
 The homepage uses the components in `src/components/portfolio`, with scoped styles in `src/app/portfolio.css` and shared tokens in `tokens.css`. Project content lives in `src/components/portfolio/projects.ts`; experience and skills remain in `src/lib/data.ts`.
 
-The four `public/images/*-cover.png` assets are original generated typography-only covers. Their titles are centered with safe margins for responsive cropping. Next Image serves optimized versions. The four `*-symbol.png` assets are centered, text-free project symbols used only in the exploration gallery. No generated photos are used.
+The four `public/images/*-cover.png` assets are original generated typography-only covers. Their titles are centered with safe margins for responsive cropping. Next Image serves optimized versions. The four `*-symbol.png` assets are the active centered, text-free project images in both the featured project cards and exploration gallery. Featured cards preserve the complete image with contain sizing; Next Image uses quality 90 for cards and quality 95 for the enlarged view. No generated photos are used.
 
 GSAP handles the entrance, gallery parallax, and marquee. Motion handles section reveals and the optional first-visit intro. HLS video loads only near the viewport, uses hls.js with a native fallback, and has a dark fallback if unavailable. The pause control and system reduced-motion preference disable continuous motion. Gallery images open in a keyboard-accessible dialog.
 

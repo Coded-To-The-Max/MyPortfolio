@@ -56,8 +56,8 @@
 .p-work-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 36px 24px; }
 .p-work-card { grid-column: span 7; min-width: 0; }
 .p-work-card:nth-child(2), .p-work-card:nth-child(3) { grid-column: span 5; }
-.p-work-visual { position: relative; display: block; height: 350px; background: #151719; border: 1px solid #ffffff16; border-radius: var(--radius-card); overflow: hidden; }
-.p-work-visual img { object-fit: cover; object-position: center; transition: transform .7s var(--ease-out); }
+.p-work-visual { position: relative; display: block; height: 350px; background: #101214; border: 1px solid #ffffff16; border-radius: var(--radius-card); overflow: hidden; }
+.p-work-visual img { object-fit: contain; object-position: center; transition: transform .7s var(--ease-out); }
 .p-work-hover { position: absolute; inset: 0; display: grid; place-items: center; background: #0005; backdrop-filter: blur(7px); opacity: 0; transition: opacity .3s; }
 .p-work-hover > span { background: #f5f5f5; color: #0a0a0a; border-radius: 100px; padding: 14px 24px; border: 2px solid var(--color-blue-start); font-size: 12px; }
 .p-work-hover em { font-family: var(--font-display); font-size: 20px; padding: 0 6px; }

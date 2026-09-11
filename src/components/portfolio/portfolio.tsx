@@ -130,7 +130,7 @@ export function Portfolio() {
             <motion.div className="p-section-heading" {...reveal}><div><p className="p-eyebrow">Selected work</p><h2>Featured <em>projects</em></h2><p>A few ideas I’ve taken from curiosity to code.</p></div><a className="p-button p-small" href={`${GITHUB}?tab=repositories`} target="_blank" rel="noreferrer">All repositories <span aria-hidden="true">↗</span></a></motion.div>
             <div className="p-work-grid">{projects.map((project, index) => <motion.article className={`p-work-card p-work-${index}`} key={project.name} {...reveal}>
               <a href={project.href} target={project.href.startsWith('#') ? undefined : '_blank'} rel={project.href.startsWith('#') ? undefined : 'noreferrer'} onClick={() => { if (project.href.startsWith('#')) document.getElementById('screener-details')?.setAttribute('open', ''); }} className="p-work-visual" aria-label={project.name === 'Stock Screener' ? 'Read about Stock Screener' : `View ${project.name}`}>
-                <Image src={project.image} alt={`${project.name}: centered typography on charcoal`} fill sizes="(max-width: 700px) 95vw, 55vw" />
+                <Image src={project.image} alt={`${project.name} project symbol`} fill quality={90} sizes="(max-width: 700px) 95vw, 55vw" />
                 <span className="p-work-hover"><span>View <em>{project.name}</em> ↗</span></span>
               </a>
               <div className="p-work-copy"><div><p>{project.category}</p><h3>{project.name}</h3></div><span className="p-work-arrow" aria-hidden="true">↗</span><p className="p-work-description">{project.description}</p><span className="p-work-stack">{project.stack}</span></div>
@@ -149,7 +149,7 @@ export function Portfolio() {
 
         <section className="p-explorations" ref={galleryRef} aria-labelledby="exploration-title">
           <div className="p-explore-center"><p className="p-eyebrow">Explorations</p><h2 id="exploration-title">A closer<br /><em>look.</em></h2><p>Four ideas.<br />A shared visual language.</p><a className="p-button p-small" href={GITHUB} target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div>
-          <div className="p-gallery-columns">{[0, 1].map(column => <div key={column} className={`p-gallery-column ${column === 0 ? 'p-gallery-left' : 'p-gallery-right'}`}>{gallery.map((item, index) => index % 2 === column && <button key={item.title} className="p-gallery-card" onClick={event => { lightboxTrigger.current = event.currentTarget; setLightbox(index); }} aria-label={`Enlarge ${item.title}`}><span className="p-gallery-image"><Image src={item.image} alt={item.title} fill sizes="(max-width: 700px) 45vw, 320px" /></span><span className="p-gallery-caption">{item.title}<span aria-hidden="true">↗</span></span></button>)}</div>)}</div>
+          <div className="p-gallery-columns">{[0, 1].map(column => <div key={column} className={`p-gallery-column ${column === 0 ? 'p-gallery-left' : 'p-gallery-right'}`}>{gallery.map((item, index) => index % 2 === column && <button key={item.title} className="p-gallery-card" onClick={event => { lightboxTrigger.current = event.currentTarget; setLightbox(index); }} aria-label={`Enlarge ${item.title}`}><span className="p-gallery-image"><Image src={item.image} alt={item.title} fill quality={90} sizes="(max-width: 700px) 45vw, 320px" /></span><span className="p-gallery-caption">{item.title}<span aria-hidden="true">↗</span></span></button>)}</div>)}</div>
         </section>
 
         <section className="p-section p-toolkit" id="skills"><div className="p-container">
@@ -165,7 +165,7 @@ export function Portfolio() {
       </footer>
     </div>
     {lightbox !== null && <dialog className="p-lightbox" ref={dialog} onCancel={() => setLightbox(null)} onClick={event => { if (event.target === event.currentTarget) setLightbox(null); }} aria-label={gallery[lightbox].title}>
-      <div className="p-lightbox-content"><button autoFocus className="p-lightbox-close" onClick={() => setLightbox(null)} aria-label="Close image">Close ×</button><div className="p-lightbox-image"><Image src={gallery[lightbox].image} alt={gallery[lightbox].title} fill sizes="90vw" style={{ objectFit: 'contain' }} /></div><p>{gallery[lightbox].title}</p></div>
+      <div className="p-lightbox-content"><button autoFocus className="p-lightbox-close" onClick={() => setLightbox(null)} aria-label="Close image">Close ×</button><div className="p-lightbox-image"><Image src={gallery[lightbox].image} alt={gallery[lightbox].title} fill quality={95} sizes="90vw" style={{ objectFit: 'contain' }} /></div><p>{gallery[lightbox].title}</p></div>
     </dialog>}
   </div>;
 }
