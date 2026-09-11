@@ -82,7 +82,7 @@
 .p-experience-date { margin-left: auto; font-size: 11px; color: #aaa; }
 .p-experience-plus { font-size: 24px; font-weight: 300; color: #bbb; margin-left: 20px; }
 .p-experience-row[data-expanded="true"] .p-experience-plus { transform: rotate(45deg); }
-.p-experience-row .p-disclosure-panel > p { padding: 0 90px 28px; color: #b0b0b0; font-size: 13px; line-height: 1.8; max-width: 90ch; }
+.p-experience-row .p-disclosure-content > p { padding: 0 90px 28px; color: #b0b0b0; font-size: 13px; line-height: 1.8; max-width: 90ch; }
 .p-explorations { position: relative; min-height: 190vh; margin: 24px 0 0; }
 .p-explore-center { height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; position: relative; z-index: 1; }
 .portfolio .p-explore-center h2 { margin: 24px 0; font-size: clamp(55px, 7vw, 100px); line-height: .98; }
@@ -179,7 +179,7 @@
   .p-experience-title > span { font-size: 10px; }
   .p-experience-date { font-size: 9px; }
   .p-experience-plus { margin-left: 0; font-size: 20px; }
-  .p-experience-row .p-disclosure-panel > p { padding: 0 22px 24px; font-size: 12px; }
+  .p-experience-row .p-disclosure-content > p { padding: 0 22px 24px; font-size: 12px; }
   .p-gallery-columns, .p-motion-off .p-gallery-columns { width: calc(100% - 48px); gap: 20px; }
   .p-gallery-card { padding: 6px; border-radius: 12px; }
   .p-gallery-caption { font-size: 9px; padding: 10px 1px 4px; }
@@ -266,3 +266,5 @@
 }
 
 .p-disclosure-panel { overflow: hidden; display: flow-root; }
+
+.p-disclosure-content { display: flow-root; mask-image: linear-gradient(to bottom right, #000 40%, transparent 60%); mask-size: 250% 250%; mask-repeat: no-repeat; -webkit-mask-image: linear-gradient(to bottom right, #000 40%, transparent 60%); -webkit-mask-size: 250% 250%; -webkit-mask-repeat: no-repeat; }

@@ -24,7 +24,15 @@ export function AnimatedDetails({ summary, children, className, id, motionOff = 
       initial={false} animate={{ height: expanded ? 'auto' : 0, opacity: expanded ? 1 : 0 }}
       transition={{ height: { duration: motionOff ? 0 : .42, ease: [.22, 1, .36, 1] }, opacity: { duration: motionOff ? 0 : .24 } }}
       onAnimationComplete={() => { if (!expanded) setVisible(false); refreshLayout(); }}>
-      {children}
+      <motion.div className="p-disclosure-content" initial={false}
+        animate={{
+          opacity: expanded ? 1 : 0,
+          x: expanded || motionOff ? 0 : -8,
+          maskPosition: expanded || motionOff ? '0% 0%' : '100% 100%',
+        }}
+        transition={{ duration: motionOff ? 0 : expanded ? .32 : .14, ease: [.22, 1, .36, 1] }}>
+        {children}
+      </motion.div>
     </motion.div>
   </details>;
 }
