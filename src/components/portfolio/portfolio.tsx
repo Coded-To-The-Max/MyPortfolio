@@ -8,6 +8,7 @@ import { projects, gallery } from './projects';
 import { BackgroundVideo } from './background-video';
 import { LoadingScreen } from './loading-screen';
 import { Journal } from './journal';
+import { AnimatedDetails } from './animated-details';
 
 const GITHUB = `https://github.com/${userInfo.githubUsername}`;
 const roles = ['Developer', 'Creative', 'Founder', 'Builder'];
@@ -138,13 +139,12 @@ export function Portfolio() {
           </div>
         </section>
 
-        <Journal />
+        <Journal motionOff={motionOff} />
 
         <section className="p-section p-experience" id="experience"><div className="p-container">
           <motion.div className="p-section-heading" {...reveal}><div><p className="p-eyebrow">Along the way</p><h2>Learning by <em>building</em></h2><p>Independent projects and hands-on experience.</p></div><a className="p-button p-small" href="#skills">My toolkit <span aria-hidden="true">↓</span></a></motion.div>
-          <div className="p-experience-list">{[...experiences].reverse().map(item => <motion.details id={item.company === 'Stock Screener' ? 'screener-details' : undefined} className="p-experience-row" key={item.company} {...reveal}>
-            <summary><span className="p-experience-icon" aria-hidden="true"><item.icon size={22} strokeWidth={1.2} /></span><span className="p-experience-title"><strong>{item.company}</strong><span>{item.role}</span></span><span className="p-experience-date">{item.period}</span><span className="p-experience-plus" aria-hidden="true">+</span></summary><p>{item.description}</p>
-          </motion.details>)}</div>
+          <div className="p-experience-list">{[...experiences].reverse().map(item => <AnimatedDetails motionOff={motionOff} id={item.company === 'Stock Screener' ? 'screener-details' : undefined} className="p-experience-row" key={item.company} summary={<><span className="p-experience-icon" aria-hidden="true"><item.icon size={22} strokeWidth={1.2} /></span><span className="p-experience-title"><strong>{item.company}</strong><span>{item.role}</span></span><span className="p-experience-date">{item.period}</span><span className="p-experience-plus" aria-hidden="true">+</span></>}><p>{item.description}</p>
+          </AnimatedDetails>)}</div>
         </div></section>
 
         <section className="p-explorations" ref={galleryRef} aria-labelledby="exploration-title">
