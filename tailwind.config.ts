@@ -5,8 +5,9 @@ export default {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      fontFamily: { body: ['var(--font-body)'], headline: ['var(--font-display)'], code: ['var(--font-mono)'] },
+      fontFamily: { body: ['var(--font-body)'], headline: ['var(--font-display)'], display: ['var(--font-display)'], code: ['var(--font-mono)'] },
       colors: {
+        bg: 'hsl(var(--bg))', surface: 'hsl(var(--surface))', 'text-primary': 'hsl(var(--text))', stroke: 'hsl(var(--stroke))',
         background: 'var(--color-paper)', foreground: 'var(--color-ink)', border: 'var(--color-rule)', input: 'var(--color-rule)', ring: 'var(--color-focus)',
         card: { DEFAULT: 'var(--color-paper)', foreground: 'var(--color-ink)' }, popover: { DEFAULT: 'var(--color-paper)', foreground: 'var(--color-ink)' },
         primary: { DEFAULT: 'var(--color-accent)', foreground: 'var(--color-accent-ink)' }, secondary: { DEFAULT: 'var(--color-paper-2)', foreground: 'var(--color-ink)' },
