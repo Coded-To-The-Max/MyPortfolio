@@ -22,6 +22,12 @@ export const skills: { name: string; icon: LucideIcon }[] = [
   { name: 'Node.js', icon: Database },
   { name: 'Tailwind CSS', icon: Feather },
   { name: 'JavaScript', icon: Code },
+  { name: 'AI applications & integration', icon: Layers },
+  { name: 'Authentication', icon: Users },
+  { name: 'Databases', icon: Database },
+  { name: 'Vercel', icon: Layers },
+  { name: 'Git', icon: Code },
+  { name: 'HTML', icon: Code },
 ];
 
 export const experiences = [

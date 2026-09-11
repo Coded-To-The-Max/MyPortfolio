@@ -7,10 +7,11 @@ import { experiences, skills, userInfo } from '@/lib/data';
 import { projects, gallery } from './projects';
 import { BackgroundVideo } from './background-video';
 import { LoadingScreen } from './loading-screen';
+import { Journal } from './journal';
 
 const GITHUB = `https://github.com/${userInfo.githubUsername}`;
 const roles = ['Developer', 'Creative', 'Founder', 'Builder'];
-const nav = [{ label: 'Home', id: 'hero' }, { label: 'Work', id: 'projects' }, { label: 'Experience', id: 'experience' }];
+const nav = [{ label: 'Home', id: 'hero' }, { label: 'Work', id: 'projects' }, { label: 'Thoughts', id: 'thoughts' }, { label: 'Experience', id: 'experience' }];
 
 export function Portfolio() {
   const reducedMotion = useReducedMotion();
@@ -137,6 +138,8 @@ export function Portfolio() {
           </div>
         </section>
 
+        <Journal />
+
         <section className="p-section p-experience" id="experience"><div className="p-container">
           <motion.div className="p-section-heading" {...reveal}><div><p className="p-eyebrow">Along the way</p><h2>Learning by <em>building</em></h2><p>Independent projects and hands-on experience.</p></div><a className="p-button p-small" href="#skills">My toolkit <span aria-hidden="true">↓</span></a></motion.div>
           <div className="p-experience-list">{[...experiences].reverse().map(item => <motion.details id={item.company === 'Stock Screener' ? 'screener-details' : undefined} className="p-experience-row" key={item.company} {...reveal}>
@@ -145,7 +148,7 @@ export function Portfolio() {
         </div></section>
 
         <section className="p-explorations" ref={galleryRef} aria-labelledby="exploration-title">
-          <div className="p-explore-center"><p className="p-eyebrow">Explorations</p><h2 id="exploration-title">A closer<br /><em>look.</em></h2><p>Four projects.<br />A shared visual language.</p><a className="p-button p-small" href={GITHUB} target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div>
+          <div className="p-explore-center"><p className="p-eyebrow">Explorations</p><h2 id="exploration-title">A closer<br /><em>look.</em></h2><p>Four ideas.<br />A shared visual language.</p><a className="p-button p-small" href={GITHUB} target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div>
           <div className="p-gallery-columns">{[0, 1].map(column => <div key={column} className={`p-gallery-column ${column === 0 ? 'p-gallery-left' : 'p-gallery-right'}`}>{gallery.map((item, index) => index % 2 === column && <button key={item.title} className="p-gallery-card" onClick={event => { lightboxTrigger.current = event.currentTarget; setLightbox(index); }} aria-label={`Enlarge ${item.title}`}><span className="p-gallery-image"><Image src={item.image} alt={item.title} fill sizes="(max-width: 700px) 45vw, 320px" /></span><span className="p-gallery-caption">{item.title}<span aria-hidden="true">↗</span></span></button>)}</div>)}</div>
         </section>
 
