@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 import './portfolio.css';
+import './featured-images.css';
 
 export const metadata: Metadata = {
   title: 'Max Zhou | Developer Portfolio',
