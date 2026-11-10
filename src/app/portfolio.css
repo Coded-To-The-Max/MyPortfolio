@@ -268,3 +268,25 @@
 .p-disclosure-panel { overflow: hidden; display: flow-root; }
 
 .p-disclosure-content { display: flow-root; mask-image: linear-gradient(to bottom right, #000 40%, transparent 60%); mask-size: 250% 250%; mask-repeat: no-repeat; -webkit-mask-image: linear-gradient(to bottom right, #000 40%, transparent 60%); -webkit-mask-size: 250% 250%; -webkit-mask-repeat: no-repeat; }
+
+/* LinkedIn icon button */
+.p-icon-button { width: 48px; min-width: 48px; height: 48px; padding: 0; gap: 0; vertical-align: middle; }
+.p-icon-button:hover { border-color: var(--color-blue-start); }
+
+/* Odd final featured card sits centered */
+.p-work-card:nth-child(5):last-child { grid-column: 3 / span 8; }
+@media (max-width: 700px) { .p-work-card:nth-child(5):last-child { grid-column: auto; } }
+
+/* Hero education card */
+.p-hero-education { display: flex; justify-content: center; margin: -8px auto 32px; }
+.p-hero-education-card { display: flex; align-items: center; gap: 20px; padding: 18px 32px 18px 18px; border: 1px solid #ffffff2e; border-radius: 28px; background: #0a0a0a99; backdrop-filter: blur(12px); text-align: left; }
+.p-hero-education-logo { width: 64px; height: 64px; border-radius: 14px; flex-shrink: 0; }
+.p-hero-education-text { display: flex; flex-direction: column; gap: 4px; }
+.p-hero-education-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: #aaa; }
+.p-hero-education-text strong { font-size: clamp(20px, 2.4vw, 26px); font-weight: 500; color: #f5f5f5; }
+.p-hero-education-text > span:last-child { font-size: 14px; color: #cfcfcf; }
+.p-actions { flex-wrap: wrap; }
+@media (max-width: 700px) {
+  .p-hero-education-card { gap: 14px; padding: 14px 22px 14px 14px; }
+  .p-hero-education-logo { width: 52px; height: 52px; }
+}

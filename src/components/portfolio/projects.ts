@@ -22,6 +22,12 @@ export const projects = [
     description: 'Developed a Python research tool for screening sub-$10 equities using financial statements, insider transactions, and liquidity metrics. Integrated Yahoo Finance and SEC EDGAR data with asynchronous processing, rate limiting, retry logic, and caching to support reliable full-universe screening. Built financial risk analytics, automated reports, and forward performance evaluation, with 87 automated tests validating the implementation.',
     image: '/images/stock-screener-symbol.png', symbol: '/images/stock-screener-symbol.png', href: 'https://github.com/Coded-To-The-Max/StockScreener', code: 'https://github.com/Coded-To-The-Max/StockScreener',
   },
+  {
+    name: 'Orbital', category: 'Interactive 3D visualization', stack: 'React / Three.js / Anime.js',
+    description: 'I built Orbital for fun as an interactive 3D solar system explorer. Jump from the Sun to Pluto, or stay with Earth and scroll through four chapters on its oceans, atmosphere, interior, and Moon.',
+    image: '/images/orbital-symbol.png', symbol: '/images/orbital-symbol.png',
+    href: 'https://earth-observatory-tau.vercel.app', code: 'https://earth-observatory-tau.vercel.app',
+  },
 ];
 
 export const gallery = projects.map(project => ({
