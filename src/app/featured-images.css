@@ -1,0 +1,2 @@
+/* Fill featured frames without changing original images. */
+.p-work-visual img { object-fit: cover; }
