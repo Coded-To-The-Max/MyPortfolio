@@ -8,6 +8,8 @@ import {
   type LucideIcon,
   MousePointerSquareDashed,
   DraftingCompass,
+  Orbit,
+  GraduationCap,
 } from 'lucide-react';
 
 export const userInfo = {
@@ -71,6 +73,18 @@ export const experiences = [
       'Developed a sub-$10 equity research tool in Python, integrating Yahoo Finance and SEC EDGAR APIs to evaluate financial statements, insider transactions, and liquidity metrics. Implemented asynchronous processing, rate limiting, retry logic, and caching for reliable full-universe screening. Built financial risk analytics, automated reporting, and forward performance evaluation, with implementation validated through 87 automated tests.',
     icon: Code,
   },
+  {
+    company: 'Orbital',
+    role: 'Personal project',
+    period: '',
+    description:
+      'I used a single Earth model across all four scroll chapters so visitors never lose sight of it. For the interior chapter, I faded the globe\u2019s opacity gradually as you scroll, then added controls to highlight the mantle, outer core, and inner core. It taught me how much keeping one 3D object in view helps people stay oriented as they move from one idea to the next.',
+    icon: Orbit,
+  },
+];
+
+export const education: { school: string; field: string; period: string; icon: LucideIcon }[] = [
+  { school: 'Boston University', field: 'Computer Science', period: 'Class of 2030', icon: GraduationCap },
 ];
 
 export const futureVision =

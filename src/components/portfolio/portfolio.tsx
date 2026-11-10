@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import { experiences, skills, userInfo } from '@/lib/data';
+import { education, experiences, skills, userInfo } from '@/lib/data';
 import { projects, gallery } from './projects';
 import { BackgroundVideo } from './background-video';
 import { LoadingScreen } from './loading-screen';
@@ -11,6 +11,7 @@ import { Journal } from './journal';
 import { AnimatedDetails } from './animated-details';
 
 const GITHUB = `https://github.com/${userInfo.githubUsername}`;
+const LINKEDIN = 'https://www.linkedin.com/in/max-zhou-0282b3431';
 const roles = ['Developer', 'Creative', 'Founder', 'Builder'];
 const nav = [{ label: 'Home', id: 'hero' }, { label: 'Work', id: 'projects' }, { label: 'Thoughts', id: 'thoughts' }, { label: 'Experience', id: 'experience' }];
 
@@ -119,7 +120,8 @@ export function Portfolio() {
             <h1 className="p-name">Max Zhou</h1>
             <p className="p-role p-blur-in">A <span key={role}>{roles[role]}</span> with a curious mind.</p>
             <p className="p-hero-description p-blur-in">Building useful software at the intersection of everyday problems and creative possibilities.</p>
-            <div className="p-actions p-blur-in"><a className="p-button p-button-solid" href="#projects">See works <span aria-hidden="true">↗</span></a><a className="p-button" href="mailto:maxliyang.zhou@gmail.com">Reach out… <span aria-hidden="true">↗</span></a></div>
+            <div className="p-hero-education p-blur-in">{education.map(item => <div className="p-hero-education-card" key={item.school}><Image src="/images/boston-university-logo.png" alt="Boston University logo" width={64} height={64} className="p-hero-education-logo" /><div className="p-hero-education-text"><span className="p-hero-education-label">Education</span><strong>{item.school}</strong><span>{item.field} · {item.period}</span></div></div>)}</div>
+            <div className="p-actions p-blur-in"><a className="p-button p-button-solid" href="#projects">See works <span aria-hidden="true">↗</span></a><a className="p-button" href="mailto:maxliyang.zhou@gmail.com">Reach out… <span aria-hidden="true">↗</span></a><a className="p-button p-icon-button" href={LINKEDIN} target="_blank" rel="noreferrer" aria-label="Max Zhou on LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.63V21h-4V9.75Z"/></svg></a></div>
           </div>
           <a href="#projects" className="p-scroll"><span>Scroll to explore</span><i /></a>
           <span className="p-hero-note">Independent ideas.<br />Thoughtfully built.</span>
@@ -147,8 +149,9 @@ export function Portfolio() {
           </AnimatedDetails>)}</div>
         </div></section>
 
+
         <section className="p-explorations" ref={galleryRef} aria-labelledby="exploration-title">
-          <div className="p-explore-center"><p className="p-eyebrow">Explorations</p><h2 id="exploration-title">A closer<br /><em>look.</em></h2><p>Four ideas.<br />A shared visual language.</p><a className="p-button p-small" href={GITHUB} target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div>
+          <div className="p-explore-center"><p className="p-eyebrow">Explorations</p><h2 id="exploration-title">A closer<br /><em>look.</em></h2><p>Every project.<br />A shared visual language.</p><a className="p-button p-small" href={GITHUB} target="_blank" rel="noreferrer">Explore my GitHub ↗</a></div>
           <div className="p-gallery-columns">{[0, 1].map(column => <div key={column} className={`p-gallery-column ${column === 0 ? 'p-gallery-left' : 'p-gallery-right'}`}>{gallery.map((item, index) => index % 2 === column && <button key={item.title} className="p-gallery-card" onClick={event => { lightboxTrigger.current = event.currentTarget; setLightbox(index); }} aria-label={`Enlarge ${item.title}`}><span className="p-gallery-image"><Image src={item.image} alt={item.title} fill quality={90} sizes="(max-width: 700px) 45vw, 320px" /></span><span className="p-gallery-caption">{item.title}<span aria-hidden="true">↗</span></span></button>)}</div>)}</div>
         </section>
 
